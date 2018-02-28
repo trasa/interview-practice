@@ -4,5 +4,6 @@ func main() {
 	//runStockPriceTests()
 	//topScores()
 	//singleriffle()
-	shuffletest()
+	//shuffletest()
+	kthNodeTest()
 }
