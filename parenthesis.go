@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/golang-collections/collections/stack"
+)
 
 func parenthesistest() {
 	//    0---------*---------*---------*---------*---------*---------*---------*---------*---------*---------*
@@ -26,4 +29,55 @@ func findParenMatch(s string, pos int) int {
 	}
 	fmt.Println("unbalanced!")
 	return -1
+}
+
+func testbracketvalidator() {
+	if !bracketvalidator("{[]()}") {
+		panic("should be valid")
+	}
+	if bracketvalidator("{[(])}") {
+		panic("should NOT be valid")
+	}
+	if bracketvalidator("{[}") {
+		panic("should ALSO NOT be valid")
+	}
+	if bracketvalidator("{") {
+		panic("should ALSO NOT be valid")
+	}
+}
+
+func bracketvalidator(s string) bool {
+	expected := stack.New()
+
+	for _, c := range s {
+		switch c {
+		case '(', '{', '[':
+			fmt.Printf("found %#U\n", c)
+			expected.Push(c)
+		case ')':
+			if !checkcloser(expected, '(') {
+				return false
+			}
+
+		case ']':
+			if !checkcloser(expected, '[') {
+				return false
+			}
+
+		case '}':
+			if !checkcloser(expected, '{') {
+				return false
+			}
+		}
+	}
+	return expected.Len() == 0
+}
+
+
+func checkcloser(expected *stack.Stack, wantedChar rune) bool {
+	if expected.Len() == 0 {
+		return false
+	}
+	opener := expected.Pop()
+	return opener == wantedChar
 }

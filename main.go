@@ -8,5 +8,6 @@ func main() {
 	//kthNodeTest()
 	//doreversetest()
 	//worldcloudtest()
-	parenthesistest()
+	//parenthesistest()
+	testbracketvalidator()
 }
