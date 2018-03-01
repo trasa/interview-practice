@@ -1,5 +1,10 @@
 package main
 
+import (
+	"fmt"
+	"github.com/golang-collections/collections/stack"
+)
+
 func doreversetest() {
 	a := &LinkedListNode{value: "A"}
 	b := &LinkedListNode{value: "B"}
@@ -11,14 +16,21 @@ func doreversetest() {
 	c.next = d
 	d.next = e
 
-	printList(reverseLinkedList(a))
+	printList(reverseLinkedListUsingExtraStorage(a))
+	printList(reverseLinkedListInPlace(a))
 
 	onenode := &LinkedListNode{value: "one"}
-	printList(reverseLinkedList(onenode))
+	printList(reverseLinkedListUsingExtraStorage(onenode))
+	printList(reverseLinkedListInPlace(onenode))
+
+	emptyList := reverseLinkedListInPlace(nil)
+	fmt.Printf("emptylist: %t\n", emptyList == nil)
+	fmt.Printf("emptylist: %t\n", reverseLinkedListUsingExtraStorage(nil) == nil)
+
 }
 
 // reverse a linked list in place
-func reverseLinkedList(head *LinkedListNode) *LinkedListNode {
+func reverseLinkedListInPlace(head *LinkedListNode) *LinkedListNode {
 	//  a -> b -> c
 	//^prev
 	//  ^ cur
@@ -35,4 +47,25 @@ func reverseLinkedList(head *LinkedListNode) *LinkedListNode {
 	}
 	return prev
 
+}
+
+func reverseLinkedListUsingExtraStorage(head *LinkedListNode) *LinkedListNode {
+	if head == nil {
+		return nil
+	}
+
+	s := stack.New()
+	for current := head; current != nil; current = current.next {
+		s.Push(current)
+	}
+
+	newHead := s.Pop().(*LinkedListNode)
+	for current := newHead; current != nil; current = current.next {
+		if s.Len() > 0 {
+			current.next = s.Pop().(*LinkedListNode)
+		} else {
+			current.next = nil
+		}
+	}
+	return newHead
 }
