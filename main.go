@@ -9,5 +9,6 @@ func main() {
 	//doreversetest()
 	//worldcloudtest()
 	//parenthesistest()
-	testbracketvalidator()
+	//testbracketvalidator()
+	testpermutation()
 }
