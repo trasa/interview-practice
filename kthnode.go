@@ -1,17 +1,16 @@
 package main
 
 import (
-	"github.com/golang-collections/collections/stack"
 	"fmt"
+	"github.com/golang-collections/collections/stack"
 )
 
-
 func kthNodeTest() {
-	a := &LinkedListNode{ value: "Angel Food"}
-	b := &LinkedListNode{ value: "Bundt"}
-	c := &LinkedListNode{ value: "Cheese"}
-	d := &LinkedListNode{ value: "Devil's Food"}
-	e := &LinkedListNode{ value: "Eccles"}
+	a := &LinkedListNode{value: "Angel Food"}
+	b := &LinkedListNode{value: "Bundt"}
+	c := &LinkedListNode{value: "Cheese"}
+	d := &LinkedListNode{value: "Devil's Food"}
+	e := &LinkedListNode{value: "Eccles"}
 	a.next = b
 	b.next = c
 	c.next = d
@@ -37,7 +36,7 @@ func kthToLastNoAlloc(k int, node *LinkedListNode) (result *LinkedListNode) {
 
 	// then walk to (len - k) + 1 node
 	n := node
-	for i := 0; i < len - k; i++ {
+	for i := 0; i < len-k; i++ {
 		result = n
 		n = n.next
 	}
@@ -49,7 +48,7 @@ func kthToLastStick(k int, node *LinkedListNode) (result *LinkedListNode) {
 	right := node
 
 	// move right to the kth element
-	for i := 0; i < k - 1; i++ {
+	for i := 0; i < k-1; i++ {
 		right = right.next
 	}
 

@@ -7,7 +7,7 @@ import (
 const HighestPossibleScore = 100
 
 func topScores() {
-	unsorted := []int { 37, 89, 41, 65, 91, 53 , 53, 100, 0 }
+	unsorted := []int{37, 89, 41, 65, 91, 53, 53, 100, 0}
 	result := topScoreSorter(unsorted)
 	for _, val := range result {
 		fmt.Printf("%d ", val)

@@ -1,11 +1,10 @@
 package main
 
 import (
-	"math/rand"
 	"fmt"
+	"math/rand"
 	"time"
 )
-
 
 func shuffletest() {
 
@@ -24,7 +23,7 @@ func shuffletest() {
 }
 
 func shuffle(deck [52]int) [52]int {
-// getRandom(floor, ceil) --> random number >= floor and <= ceiling
+	// getRandom(floor, ceil) --> random number >= floor and <= ceiling
 
 	for i := len(deck) - 1; i > 1; i-- {
 		j := getRandom(0, i)
@@ -33,7 +32,6 @@ func shuffle(deck [52]int) [52]int {
 	return deck
 }
 
-
 func getRandom(floor int, ceil int) int {
-	return rand.Intn((ceil + 1)- floor) + floor
+	return rand.Intn((ceil+1)-floor) + floor
 }

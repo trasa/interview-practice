@@ -6,29 +6,27 @@ func singleriffle() {
 	// given shuffledDeck, half1 and half2, determine if half1 and half2 were single-riffled
 	// into shuffedDeck.
 
-	full := []int { 1, 2, 3, 4, 5 }
-	one := []int { 1, 2, 3, 4 }
-	two :=  []int { 5 }
+	full := []int{1, 2, 3, 4, 5}
+	one := []int{1, 2, 3, 4}
+	two := []int{5}
 	if !verifyDeck(full, one, two) {
 		panic("expected success")
 	}
 
-	full = []int { 1, 10, 2, 3, 20, 30, 4, 40 }
-	one = []int { 1, 2, 3, 4}
-	two = []int { 10, 20, 30, 40 }
+	full = []int{1, 10, 2, 3, 20, 30, 4, 40}
+	one = []int{1, 2, 3, 4}
+	two = []int{10, 20, 30, 40}
 	if !verifyDeck(full, one, two) {
 		panic("expected success")
 	}
 
-
-	badDeck := []int { 1, 10, 2, 20, 30, 40, 4 , 3}
-	one = []int { 1, 2, 3, 4 }
-	two = []int { 10, 20, 30, 40 }
+	badDeck := []int{1, 10, 2, 20, 30, 40, 4, 3}
+	one = []int{1, 2, 3, 4}
+	two = []int{10, 20, 30, 40}
 	if verifyDeck(badDeck, one, two) {
 		panic("fail")
 	}
 }
-
 
 func verifyDeck(shuffledDeck []int, halfOne []int, halfTwo []int) bool {
 	onePos := 0
@@ -49,9 +47,6 @@ func verifyDeck(shuffledDeck []int, halfOne []int, halfTwo []int) bool {
 	}
 	return onePos == len(halfOne) && twoPos == len(halfTwo)
 }
-
-
-
 
 func verifyHalf(shuffledDeck []int, half []int) bool {
 	deckPos := 0

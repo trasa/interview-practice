@@ -4,9 +4,8 @@ import "fmt"
 
 type LinkedListNode struct {
 	value string
-	next *LinkedListNode
+	next  *LinkedListNode
 }
-
 
 func printList(n *LinkedListNode) {
 

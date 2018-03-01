@@ -1,12 +1,11 @@
 package main
 
-
 func doreversetest() {
-	a := &LinkedListNode{ value: "A"}
-	b := &LinkedListNode{ value: "B"}
-	c := &LinkedListNode{ value: "C"}
-	d := &LinkedListNode{ value: "D"}
-	e := &LinkedListNode{ value: "E"}
+	a := &LinkedListNode{value: "A"}
+	b := &LinkedListNode{value: "B"}
+	c := &LinkedListNode{value: "C"}
+	d := &LinkedListNode{value: "D"}
+	e := &LinkedListNode{value: "E"}
 	a.next = b
 	b.next = c
 	c.next = d
@@ -14,16 +13,15 @@ func doreversetest() {
 
 	printList(reverseLinkedList(a))
 
-	onenode := &LinkedListNode{value:"one"}
+	onenode := &LinkedListNode{value: "one"}
 	printList(reverseLinkedList(onenode))
 }
 
-
 // reverse a linked list in place
 func reverseLinkedList(head *LinkedListNode) *LinkedListNode {
-//  a -> b -> c
-//^prev
-//  ^ cur
+	//  a -> b -> c
+	//^prev
+	//  ^ cur
 
 	var prev *LinkedListNode
 

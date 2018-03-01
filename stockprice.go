@@ -6,13 +6,13 @@ import (
 )
 
 func runStockPriceTests() {
-	prices := []int {
-		 10, 7, 5, 8, 11, 9,
+	prices := []int{
+		10, 7, 5, 8, 11, 9,
 	}
 	verifyProfit(getMaxProfitSquared(prices), 6)
 	verifyProfit(getMaxProfitOnePass(prices), 6)
 
-	negativeProfit := []int {
+	negativeProfit := []int{
 		10, 7,
 	}
 	verifyProfit(getMaxProfitSquared(negativeProfit), -3)
@@ -33,8 +33,8 @@ func getMaxProfitSquared(prices []int) int {
 		fmt.Printf("buy candidate %d: %d\n", buyCandidatePos, buyCandidate)
 		// if we buy at this point...
 		for _, sellCandidate := range prices[buyCandidatePos+1:] {
-			fmt.Printf("sell candidate: %d, current best %d, profit %d\n", sellCandidate, bestProfit, sellCandidate - buyCandidate)
-			if bestProfit < sellCandidate - buyCandidate {
+			fmt.Printf("sell candidate: %d, current best %d, profit %d\n", sellCandidate, bestProfit, sellCandidate-buyCandidate)
+			if bestProfit < sellCandidate-buyCandidate {
 				bestProfit = sellCandidate - buyCandidate
 				fmt.Printf("new best! %d\n", bestProfit)
 			}
@@ -50,7 +50,7 @@ func getMaxProfitOnePass(prices []int) int {
 	bestProfit := prices[1] - prices[0]
 	minPrice := prices[0]
 
-	for _, curPrice := range prices[1:]{
+	for _, curPrice := range prices[1:] {
 		profit := curPrice - minPrice
 		if bestProfit < profit {
 			bestProfit = profit
