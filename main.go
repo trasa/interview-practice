@@ -7,5 +7,6 @@ func main() {
 	//shuffletest()
 	//kthNodeTest()
 	//doreversetest()
-	worldcloudtest()
+	//worldcloudtest()
+	parenthesistest()
 }
