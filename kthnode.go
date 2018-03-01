@@ -5,11 +5,6 @@ import (
 	"fmt"
 )
 
-type LinkedListNode struct {
-	value string
-	next *LinkedListNode
-}
-
 
 func kthNodeTest() {
 	a := &LinkedListNode{ value: "Angel Food"}

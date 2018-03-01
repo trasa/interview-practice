@@ -5,5 +5,6 @@ func main() {
 	//topScores()
 	//singleriffle()
 	//shuffletest()
-	kthNodeTest()
+	//kthNodeTest()
+	doreversetest()
 }
