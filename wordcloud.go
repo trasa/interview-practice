@@ -1,8 +1,8 @@
 package main
 
 import (
-	"strings"
 	"fmt"
+	"strings"
 	"unicode"
 )
 
@@ -14,7 +14,7 @@ func worldcloudtest() {
 	}
 
 	fmt.Printf("second\n")
-	c =	buildWordCloud("Add milk and eggs, then add flour and sugar.")
+	c = buildWordCloud("Add milk and eggs, then add flour and sugar.")
 	for k, v := range c {
 		fmt.Printf("%s : %d\n", k, v)
 	}
@@ -32,7 +32,7 @@ func splitWords(s string) (result []string) {
 			wlen++
 		} else {
 			// found a word
-			w := strings.ToLower(s[start:start+wlen])
+			w := strings.ToLower(s[start : start+wlen])
 			fmt.Println(w)
 			result = append(result, w)
 			wlen = 0

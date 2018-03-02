@@ -73,7 +73,6 @@ func bracketvalidator(s string) bool {
 	return expected.Len() == 0
 }
 
-
 func checkcloser(expected *stack.Stack, wantedChar rune) bool {
 	if expected.Len() == 0 {
 		return false
