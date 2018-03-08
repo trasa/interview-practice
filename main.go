@@ -11,5 +11,7 @@ func main() {
 	//parenthesistest()
 	//testbracketvalidator()
 	//testpermutation()
-	teststringrecur()
+	//teststringrecur()
+	//testGetProductsOfAllIntsExceptAtIndex()
+	testhighestproduct()
 }
