@@ -2,11 +2,12 @@ package main
 
 import (
 	"fmt"
+	"testing"
 )
 
 const HighestPossibleScore = 100
 
-func topScores() {
+func TestTopScore(t *testing.T) {
 	unsorted := []int{37, 89, 41, 65, 91, 53, 53, 100, 0}
 	result := topScoreSorter(unsorted)
 	for _, val := range result {

@@ -4,9 +4,10 @@ import (
 	"fmt"
 	"strings"
 	"unicode"
+	"testing"
 )
 
-func worldcloudtest() {
+func TestWordCloud(t *testing.T) {
 	c := buildWordCloud("After beating the eggs, Dana read the next step:")
 	fmt.Printf("first:\n")
 	for k, v := range c {

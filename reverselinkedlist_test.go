@@ -3,9 +3,10 @@ package main
 import (
 	"fmt"
 	"github.com/golang-collections/collections/stack"
+	"testing"
 )
 
-func doreversetest() {
+func TestDoReverse(t *testing.T) {
 	a := &LinkedListNode{value: "A"}
 	b := &LinkedListNode{value: "B"}
 	c := &LinkedListNode{value: "C"}

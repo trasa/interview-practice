@@ -1,8 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
-func testpermutation() {
+func TestPermutePalindrome(t *testing.T) {
 	if !anypermutationpalindrome("civic") {
 		panic("expected palindrome")
 	}
@@ -28,6 +31,7 @@ func testpermutation() {
 		panic("bbbb")
 	}
 }
+
 func anypermutationpalindrome(s string) bool {
 	letters := make(map[rune]bool)
 

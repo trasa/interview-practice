@@ -1,8 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
-func teststringrecur() {
+func TestStringRecur(t *testing.T) {
 	/*
 	   "abc" -> "abc", "acb", "bac", "bca" ...
 	*/

@@ -3,9 +3,10 @@ package main
 import (
 	"fmt"
 	"github.com/golang-collections/collections/stack"
+	"testing"
 )
 
-func parenthesistest() {
+func TestParenthesis(t *testing.T) {
 	//    0---------*---------*---------*---------*---------*---------*---------*---------*---------*---------*
 	s := "Sometimes (when I nest them (my parentheticals) too much (like this (and this))) they get confusing."
 	result := findParenMatch(s, 10)

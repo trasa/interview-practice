@@ -3,9 +3,10 @@ package main
 import (
 	"fmt"
 	"math"
+	"testing"
 )
 
-func runStockPriceTests() {
+func TestStockPrice(t *testing.T) {
 	prices := []int{
 		10, 7, 5, 8, 11, 9,
 	}

@@ -1,8 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
-func singleriffle() {
+func TestSingleRiffle(t *testing.T) {
 	// given shuffledDeck, half1 and half2, determine if half1 and half2 were single-riffled
 	// into shuffedDeck.
 

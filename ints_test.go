@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
+	"testing"
 )
 
-func testGetProductsOfAllIntsExceptAtIndex() {
+func TestGetProductsOfAllIntsExceptAtIndex(t *testing.T) {
 	result := getProductsOfAllIntsExceptAtIndex([]int { 1, 7, 3, 4})
 	fmt.Printf("%v\n", result)
 
@@ -35,7 +36,7 @@ func getProductsOfAllIntsExceptAtIndex(values []int) (result []int) {
 }
 
 
-func testhighestproduct() {
+func TestHighestProduct(t *testing.T) {
 	values := []int { 10, 2, 3, 4, 5}
 	fmt.Printf("highest product %d\n", highestProductBruteForce(values))
 

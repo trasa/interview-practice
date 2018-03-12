@@ -3,9 +3,10 @@ package main
 import (
 	"fmt"
 	"github.com/golang-collections/collections/stack"
+	"testing"
 )
 
-func kthNodeTest() {
+func TestKthNode(t *testing.T) {
 	a := &LinkedListNode{value: "Angel Food"}
 	b := &LinkedListNode{value: "Bundt"}
 	c := &LinkedListNode{value: "Cheese"}

@@ -4,9 +4,10 @@ import (
 	"fmt"
 	"math/rand"
 	"time"
+	"testing"
 )
 
-func shuffletest() {
+func TestShuffle(t *testing.T) {
 
 	// not secure
 	rand.Seed(time.Now().UnixNano())
