@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 	"math/rand"
-	"time"
 	"testing"
+	"time"
 )
 
 func TestShuffle(t *testing.T) {

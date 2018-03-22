@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 	"strings"
-	"unicode"
 	"testing"
+	"unicode"
 )
 
 func TestWordCloud(t *testing.T) {

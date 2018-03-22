@@ -6,10 +6,10 @@ import (
 )
 
 func TestGetProductsOfAllIntsExceptAtIndex(t *testing.T) {
-	result := getProductsOfAllIntsExceptAtIndex([]int { 1, 7, 3, 4})
+	result := getProductsOfAllIntsExceptAtIndex([]int{1, 7, 3, 4})
 	fmt.Printf("%v\n", result)
 
-	result = getProductsOfAllIntsExceptAtIndex([]int { 1, 0, 2 })
+	result = getProductsOfAllIntsExceptAtIndex([]int{1, 0, 2})
 	fmt.Printf("%v\n", result)
 }
 
@@ -19,7 +19,7 @@ func getProductsOfAllIntsExceptAtIndex(values []int) (result []int) {
 		if i == 0 {
 			beforeValues = append(beforeValues, 1)
 		} else {
-			beforeValues = append(beforeValues, beforeValues[i-1] * val)
+			beforeValues = append(beforeValues, beforeValues[i-1]*val)
 		}
 	}
 	fmt.Printf("before values %v\n", beforeValues)
@@ -35,12 +35,11 @@ func getProductsOfAllIntsExceptAtIndex(values []int) (result []int) {
 	return
 }
 
-
 func TestHighestProduct(t *testing.T) {
-	values := []int { 10, 2, 3, 4, 5}
+	values := []int{10, 2, 3, 4, 5}
 	fmt.Printf("highest product %d\n", highestProductBruteForce(values))
 
-	values = []int {-10, -10, 1, 3, 2}
+	values = []int{-10, -10, 1, 3, 2}
 	fmt.Printf("highest product %d\n", highestProductBruteForce(values))
 }
 
@@ -48,7 +47,7 @@ func highestProductBruteForce(arrayOfInts []int) (best int) {
 	for firstpos, first := range arrayOfInts {
 		for secondpos, second := range arrayOfInts[firstpos+1:] {
 			for _, third := range arrayOfInts[secondpos+2:] {
-				fmt.Printf("check %d %d %d\n", first,second, third)
+				fmt.Printf("check %d %d %d\n", first, second, third)
 				candidate := first * second * third
 				if candidate > best {
 					best = candidate

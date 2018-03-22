@@ -1,9 +1,9 @@
 package main
 
 import (
-	"testing"
 	"fmt"
 	"github.com/stretchr/testify/assert"
+	"testing"
 )
 
 func TestMergeSortedArray(t *testing.T) {
@@ -21,10 +21,10 @@ func TestMergeSortedArray(t *testing.T) {
 	verifyMergeSortedArray(t, first, second, result)
 }
 
-func verifyMergeSortedArray(t *testing.T, first []int, second []int, result []int){
+func verifyMergeSortedArray(t *testing.T, first []int, second []int, result []int) {
 	fmt.Printf("Sorted Array Result: %v\n", result)
-	assert.Equal(t, len(first) + len(second), len(result))
-	prev :=  -1000
+	assert.Equal(t, len(first)+len(second), len(result))
+	prev := -1000
 	for _, i := range result {
 		assert.True(t, prev <= i)
 		prev = i
@@ -34,7 +34,7 @@ func verifyMergeSortedArray(t *testing.T, first []int, second []int, result []in
 func mergeSortedArray(first []int, second []int) (result []int) {
 	firstPtr := 0
 	secondPtr := 0
-	for ; firstPtr < len(first) && secondPtr < len(second) ; {
+	for firstPtr < len(first) && secondPtr < len(second) {
 		if first[firstPtr] <= second[secondPtr] {
 			result = append(result, first[firstPtr])
 			firstPtr++
